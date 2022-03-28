@@ -2,8 +2,9 @@ from tkinter import *
 from tkinter import messagebox
 import webbrowser
 import subprocess
+import os
 
-dane = open('dane.txt', 'r')
+dane = open(os.getcwd()+'\dane.txt', 'r')
 window = Tk()
 window.title('PrepareApp')
 window.geometry('100x100')
