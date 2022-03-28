@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import messagebox
 import webbrowser
+
+dane = open('dane.txt', 'r')
 window = Tk()
 window.title('PrepareApp')
 window.geometry('250x150')
@@ -17,10 +19,12 @@ def prepare():
     if(choice == 0):
         webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
     elif(choice == 1):
-        print('j00ż')
+        for line in dane:
+            print(line)
     elif(choice == 2):
         print('j33ż')
 
 submit = Button(text = 'Przygotuj', command = prepare).pack()
+settings = Button(text = 'Ustawienia').pack()
 
 window.mainloop()
