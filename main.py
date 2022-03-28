@@ -1,11 +1,20 @@
-import tkinter as tk
-window = tk.Tk()
-window.title('Kurwa Jeż')
-window.geometry('500x400')
+from tkinter import *
+window = Tk()
+window.title('PrepareApp')
+window.geometry('250x150')
 
-greeting = tk.Label(text = 'Kurwa jeż, jeż w centrum miasta')
+greeting = Label(text = 'Kurwa jeż, jeż w centrum miasta')
 greeting.pack()
-button = tk.Button(text = 'Gorące jeże w okolicy')
+button = Button(text = 'Gorące jeże w okolicy')
 button.pack()
+
+var = IntVar()
+study = Radiobutton(text = 'Nauka', variable = var, value = 1)
+study.pack()
+play = Radiobutton(text = 'Grańsko', variable = var, value = 2)
+play.pack()
+
+submit = Button(text = 'Przygotuj')
+submit.pack()
 
 window.mainloop()
