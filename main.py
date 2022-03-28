@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import webbrowser
+import subprocess
 
 dane = open('dane.txt', 'r')
 window = Tk()
@@ -19,8 +20,19 @@ def prepare():
     if(choice == 0):
         webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
     elif(choice == 1):
+        web = False
+        app = False
         for line in dane:
-            print(line)
+            line = line[:-1]
+            if(line == '-- Strony internetowe --'):
+                web = True
+            elif(line == '-- Programy --'):
+                web = False
+                app = True
+            elif(app == True):
+                subprocess.Popen([line])
+            elif(web == True):
+                webbrowser.open(line)
     elif(choice == 2):
         print('j33ż')
 

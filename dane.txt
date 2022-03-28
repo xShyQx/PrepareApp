@@ -1,5 +1,6 @@
--- Programy --
-Notepad
 -- Strony internetowe --
 https://www.notion.so
 https://pomofocus.io
+-- Programy --
+Notepad
+Spotify
