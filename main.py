@@ -6,14 +6,11 @@ import subprocess
 dane = open('dane.txt', 'r')
 window = Tk()
 window.title('PrepareApp')
-window.geometry('250x150')
-
-greeting = Label(text = 'Kurwa jeż, jeż w centrum miasta').pack()
-button = Button(text = 'Gorące jeże w okolicy').pack()
+window.geometry('100x100')
 
 var_choice = IntVar(window, 0)
-study = Radiobutton(text = 'Nauka', variable = var_choice, value = 1).pack()
-play = Radiobutton(text = 'Grańsko', variable = var_choice, value = 2).pack()
+r1 = Radiobutton(text = 'Nauka', variable = var_choice, value = 1).pack()
+r2 = Radiobutton(text = 'Grańsko', variable = var_choice, value = 2).pack()
 
 def prepare():
     choice = var_choice.get()
@@ -34,9 +31,8 @@ def prepare():
             elif(web == True):
                 webbrowser.open(line)
     elif(choice == 2):
-        print('j33ż')
+        print('W trakcie budowy')
 
 submit = Button(text = 'Przygotuj', command = prepare).pack()
-settings = Button(text = 'Ustawienia').pack()
 
 window.mainloop()
